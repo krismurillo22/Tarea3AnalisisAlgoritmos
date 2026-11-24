@@ -47,6 +47,7 @@ int main()
     std::cout << "\n";
 
     testAlgorithm("Merge Sort", mergeSort, original);
+    testAlgorithm("Selection Sort", selectionSort, original);
 
     return 0;
 }

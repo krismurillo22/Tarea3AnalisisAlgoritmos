@@ -4,5 +4,6 @@
 #include <vector>
 
 void mergeSort(std::vector<int>& arr);
+void selectionSort(std::vector<int>& arr);
 
 #endif
