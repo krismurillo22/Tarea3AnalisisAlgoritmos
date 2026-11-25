@@ -50,6 +50,7 @@ int main()
     testAlgorithm("Selection Sort", selectionSort, original);
     testAlgorithm("Bubble Sort", bubbleSort, original);
     testAlgorithm("Quick Sort", quickSort, original);
-
+    testAlgorithm("Heap Sort", heapSort, original);
+    
     return 0;
 }
