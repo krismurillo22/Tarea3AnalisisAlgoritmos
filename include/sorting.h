@@ -8,5 +8,6 @@ void selectionSort(std::vector<int>& arr);
 void bubbleSort(std::vector<int>& arr);
 void quickSort(std::vector<int>& arr);
 void heapSort(std::vector<int>& arr);
+void insertionSort(std::vector<int>& arr);
 
 #endif

@@ -51,6 +51,6 @@ int main()
     testAlgorithm("Bubble Sort", bubbleSort, original);
     testAlgorithm("Quick Sort", quickSort, original);
     testAlgorithm("Heap Sort", heapSort, original);
-    
+    testAlgorithm("Insertion Sort", insertionSort, original);
     return 0;
 }
