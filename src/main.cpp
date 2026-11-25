@@ -48,6 +48,7 @@ int main()
 
     testAlgorithm("Merge Sort", mergeSort, original);
     testAlgorithm("Selection Sort", selectionSort, original);
+    testAlgorithm("Bubble Sort", bubbleSort, original);
 
     return 0;
 }
