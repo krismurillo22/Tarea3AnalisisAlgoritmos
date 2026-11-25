@@ -14,6 +14,7 @@ add_executable(sorting_benchmark
     src/quick_sort.cpp
     src/heap_sort.cpp
     src/insertion_sort.cpp
+    src/benchmark.cpp
 )
 
 target_include_directories(sorting_benchmark PRIVATE include)
