@@ -3,10 +3,10 @@
 #include <exception>
 #include "benchmark.h"
 
-int main()
-{
+int main(){
     std::cout << " SORTING ALGORITHMS BENCHMARK\n";
-    const std::vector<int> sizes = {100, 1000, 10000};
+    const std::vector<int> sizes = {1000000, 2000000, 5000000, 10000000, 20000000, 50000000};
+
     const int repetitions = 5;
 
     try{

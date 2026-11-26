@@ -42,13 +42,17 @@ void runBenchmark(const std::vector<int>& sizes, int repetitions){
     };
 
     std::filesystem::create_directories("results");
-    std::ofstream csv("results/resultados.csv");
+    const std::string csvPath = "results/resultados.csv";
+    bool writeHeader = !std::filesystem::exists(csvPath) || std::filesystem::file_size(csvPath) == 0;
+    std::ofstream csv(csvPath, std::ios::app);
 
     if (!csv.is_open()){
         throw std::runtime_error("No se pudo crear el archivo CSV");
     }
 
-    csv << "Algoritmo,N,Repeticion,Tiempo_ms,Estado\n";
+    if (writeHeader){
+        csv << "Algoritmo,N,Repeticion,Tiempo_ms,Estado\n";
+    }
     csv << std::fixed << std::setprecision(6);
     int totalTests = sizes.size() * algorithms.size() * repetitions;
     int currentTest = 0;
@@ -67,6 +71,18 @@ void runBenchmark(const std::vector<int>& sizes, int repetitions){
 
             // Ejecutar cada algoritmo
             for (const Algorithm& algorithm : algorithms){
+                if (n >= 1000000 && (algorithm.name == "Bubble Sort" || algorithm.name == "Selection Sort"))                    {
+                    continue;
+                }
+
+                if (n > 1000000 && algorithm.name == "Insertion Sort"){
+                    continue;
+                }
+
+                if (n == 1000000 && r == 1){
+                    continue;
+                }
+
                 currentTest++;
                 std::vector<int> arr = original;
                 std::cout << "[" << currentTest << "/" << totalTests << "] " << algorithm.name
