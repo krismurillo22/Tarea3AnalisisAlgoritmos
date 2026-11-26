@@ -71,17 +71,6 @@ void runBenchmark(const std::vector<int>& sizes, int repetitions){
 
             // Ejecutar cada algoritmo
             for (const Algorithm& algorithm : algorithms){
-                if (n >= 1000000 && (algorithm.name == "Bubble Sort" || algorithm.name == "Selection Sort"))                    {
-                    continue;
-                }
-
-                if (n > 1000000 && algorithm.name == "Insertion Sort"){
-                    continue;
-                }
-
-                if (n == 1000000 && r == 1){
-                    continue;
-                }
 
                 currentTest++;
                 std::vector<int> arr = original;

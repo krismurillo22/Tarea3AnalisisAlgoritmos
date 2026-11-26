@@ -5,9 +5,9 @@
 
 int main(){
     std::cout << " SORTING ALGORITHMS BENCHMARK\n";
-    const std::vector<int> sizes = {1000000, 2000000, 5000000, 10000000, 20000000, 50000000};
+    const std::vector<int> sizes = {2500000};
 
-    const int repetitions = 5;
+    const int repetitions = 2;
 
     try{
         runBenchmark(sizes, repetitions);
